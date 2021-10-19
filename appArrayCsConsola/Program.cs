@@ -14,14 +14,35 @@ namespace appArrayCsConsola
             for (int i = 0; i < arreglo.Length; i++)
             { Console.WriteLine(arreglo[i]); } */
 
-            Console.WriteLine("ingrese el valor de indice en el que desea escribir: ");
+            /*Console.WriteLine("ingrese el valor de indice en el que desea escribir: ");
             int indice = int.Parse(Console.ReadLine());
             Console.WriteLine("ingrese lo que quiere guardar en este indice: ");
             string valor = Console.ReadLine();
 
             ClasePruebaArray a1;
             a1 = new ClasePruebaArray(valor, indice);
-            Console.WriteLine(a1.ToString());
+            Console.WriteLine(a1.ToString()); */
+
+            string respuesta = "S";
+            while (respuesta == "S")
+                {
+                Console.WriteLine("ingrese el valor de indice en el que desea escribir... [1 - 5] ");
+                int indice = int.Parse(Console.ReadLine());
+                Console.WriteLine("ingrese lo que quiere guardar en este indice: ");
+                string valor = Console.ReadLine();
+
+                Console.WriteLine("desea agregar otro valor? [S/N] ");
+                respuesta = Console.ReadLine();
+                respuesta = respuesta.ToUpper();
+
+                if (respuesta != "S")
+                {
+                    ClasePruebaArray a1;
+                    a1 = new ClasePruebaArray(valor, indice);
+                    Console.WriteLine(a1.ToString());
+                }
+                
+                }
 
             Console.ReadKey();
         }

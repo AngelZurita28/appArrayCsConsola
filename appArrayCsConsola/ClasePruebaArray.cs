@@ -31,13 +31,28 @@ namespace appArrayCsConsola
         }
         
         public ClasePruebaArray(string valor, int indice)
-        {
+        {   
+
             this.indice = indice;
-            arreglo[indice] = valor;
+            arreglo[indice-1] = valor;
         }
 
         public override string ToString()
-        { return "El indice " + indice + " contiene: " + arreglo[indice]; }
+        {
+            string respuesta = "S";
+            while (respuesta == "S")
+            {
+                Console.WriteLine("Que indice desea imprimir? ");
+                indice = int.Parse(Console.ReadLine());
+                Console.WriteLine("El indice " + indice + " contiene: " + arreglo[indice - 1]);
+
+                Console.WriteLine("Desea consultar algun otro indice? [S/N] ");
+                respuesta = Console.ReadLine();
+                respuesta = respuesta.ToUpper();
+
+            }
+            return "";
+        }
 
     }
 }
